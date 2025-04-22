@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import os
+import dj_database_url
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -143,7 +146,7 @@ WSGI_APPLICATION = 'devsearch.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('postgresql://devsearch_user:IhTCeBOHCmjXDr4wiKgNqQmqrfexvElW@dpg-d03f083uibrs73a7gd2g-a/devsearch_db_ubzh'))
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
